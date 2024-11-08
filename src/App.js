@@ -8,12 +8,7 @@ import { useState, useEffect } from 'react';
 function App() {
   
   let initTodo;
-  
-  if(localStorage.getItem("todos")===undefined){
-    initTodo =[]
-  }else{
-    initTodo=JSON.parse(localStorage.getItem('todos'))
-  }
+  localStorage.getItem("todos")? initTodo =[] : initTodo=JSON.parse(localStorage.getItem('todos'))
 
   const onDelete=(i)=>{
     setTodolist(todolist.filter((e)=>{
